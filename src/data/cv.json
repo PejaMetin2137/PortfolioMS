@@ -1,0 +1,84 @@
+{
+  "name": "Mikolaj Suchodolski",
+  "title": "Junior Software Developer",
+  "email": "suchodolski.mikolaj02@gmail.com",
+  "phone": "+48 693 088 125",
+  "location": "Wroclaw",
+  "locationFull": "Wroclaw, Poland",
+  "website": "mikolajsuchodolski.dev",
+  "github": "https://github.com/PejaMetin2137",
+  "photo": "profile.jpg",
+  "pdfFile": "CV_Mikolaj_Suchodolski.pdf",
+
+  "about": "Computer Science student aiming for a career in software development. I build backend and web applications in Python and TypeScript/React, know the basics of C, and I'm currently learning Go. At BNY I troubleshoot data discrepancies across complex file systems, which has taught me a structured approach to root-cause analysis. Currently developing a FastAPI-based platform for my engineering thesis.",
+
+  "projects": [
+    {
+      "name": "Brix-V&S",
+      "kind": "Engineering thesis",
+      "description": "Platform for valuing and trading LEGO Star Wars sets and minifigures. Building the REST backend in FastAPI with an SQLAlchemy data layer, containerized with Docker.",
+      "stack": ["Python", "FastAPI", "SQLAlchemy", "Docker"]
+    },
+    {
+      "name": "DreamPlanner",
+      "kind": "Team project",
+      "description": "Frontend Developer in a university team building a planning application hosted in the Azure cloud, integrated with a REST API.",
+      "stack": ["React", "TypeScript", "Vite", "Azure", "PostgreSQL"]
+    },
+    {
+      "name": "nitrobrix.pl",
+      "kind": "E-commerce",
+      "description": "Built and run my own online store with LEGO Star Wars products.",
+      "stack": ["WordPress", "WooCommerce"],
+      "link": "https://nitrobrix.pl"
+    }
+  ],
+
+  "experience": [
+    {
+      "period": "2025 – Present",
+      "role": "Collateral Administrator",
+      "company": "BNY",
+      "description": "Gained practical experience in data troubleshooting and resolving discrepancies across complex shared drives and file systems. Developed a strong eye for detail and a structured approach to root-cause analysis when tracking down data inconsistencies."
+    },
+    {
+      "period": "2021 – 2025",
+      "role": "English Tutor",
+      "company": "Tutore",
+      "description": "Taught English while developing clear, structured communication, active listening and the ability to adapt my approach to different people."
+    }
+  ],
+
+  "education": [
+    {
+      "period": "2023 – Present",
+      "field": "Computer Science",
+      "school": "WSB Merito University Wroclaw",
+      "description": "Bachelor of Engineering in progress (expected 2027), specialization: Cloud Solutions Architect."
+    },
+    {
+      "period": "2021 – 2023",
+      "field": "Spatial Development",
+      "school": "Wrocław University of Science and Technology",
+      "description": "Not completed."
+    }
+  ],
+
+  "skills": [
+    { "group": "Programming", "items": ["Python", "C (basics)", "Go (learning)", "TypeScript", "SQL"] },
+    { "group": "Frameworks & libs", "items": ["FastAPI", "SQLAlchemy", "React (basics)"] },
+    { "group": "Tools", "items": ["Git / GitHub", "Docker", "Unix / macOS terminal", "VS Code"] },
+    { "group": "Cloud", "items": ["Azure", "AWS", "Kubernetes (fundamentals)", "Terraform (fundamentals)"] },
+    { "group": "Other", "items": ["SAP S/4HANA (data export, finance reporting)", "MS Office", "Data analysis"] }
+  ],
+
+  "languages": [
+    { "name": "Polish", "level": "Native", "percent": 100 },
+    { "name": "English", "level": "C1", "percent": 85 },
+    { "name": "German", "level": "A2", "percent": 35 }
+  ],
+
+  "interests": "Fallout series, LEGO Star Wars collecting.",
+
+  "gdpr": "I hereby consent to the processing of my personal data included in this document for the purposes of the recruitment process, in accordance with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 (GDPR)."
+}
