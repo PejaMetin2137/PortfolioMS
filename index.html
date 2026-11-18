@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mikolaj Suchodolski — CV</title>
+  <meta name="description" content="Mikolaj Suchodolski — Junior Software Developer, Computer Science student at WSB Merito Wroclaw. Python, FastAPI, TypeScript/React, C, Go.">
+  <meta property="og:title" content="Mikolaj Suchodolski — CV">
+  <meta property="og:description" content="Junior Software Developer — Python, FastAPI, TypeScript/React, C, Go.">
+  <meta property="og:image" content="profile.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='66' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>MS</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-soft: #eff4ff;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --card: #171a21;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --line: #2a2f3a;
+        --accent: #60a5fa;
+        --accent-soft: #1b2638;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 960px; margin: 0 auto; padding: 48px 20px 64px; }
+
+    /* ---------- Header ---------- */
+    header.hero {
+      display: flex; gap: 32px; align-items: center;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 32px;
+    }
+    .avatar {
+      width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+      flex-shrink: 0; border: 4px solid var(--accent-soft);
+    }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+    .hero .role { color: var(--accent); font-weight: 600; margin-top: 4px; }
+    .contact { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px; color: var(--muted); font-size: 0.95rem; }
+    .contact span, .contact a { display: inline-flex; align-items: center; gap: 6px; }
+    .contact svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .contact a { color: var(--muted); }
+    .contact a:hover { color: var(--accent); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 16px; border-radius: 10px; font-weight: 600; font-size: 0.9rem;
+      border: 1px solid var(--line); color: var(--text); background: var(--card);
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .btn:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-1px); }
+    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn svg { width: 16px; height: 16px; }
+
+    /* ---------- Sections ---------- */
+    section {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 28px 32px; margin-top: 20px;
+    }
+    section h2 {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent); font-weight: 700; margin-bottom: 18px;
+    }
+    .about p { font-size: 1.05rem; }
+
+    .timeline-item { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 14px 0; }
+    .timeline-item + .timeline-item { border-top: 1px solid var(--line); }
+    .timeline-item .date { color: var(--muted); font-size: 0.9rem; font-weight: 500; padding-top: 2px; }
+    .timeline-item h3 { font-size: 1.02rem; font-weight: 700; }
+    .timeline-item .org { color: var(--muted); font-weight: 500; }
+    .timeline-item p { margin-top: 6px; color: var(--text); opacity: .9; }
+
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .project {
+      border: 1px solid var(--line); border-radius: 12px; padding: 18px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .project h3 { font-size: 1rem; font-weight: 700; }
+    .project p { font-size: 0.93rem; opacity: .9; flex-grow: 1; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--accent-soft); color: var(--accent);
+      padding: 4px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
+    }
+
+    .skills-group + .skills-group { margin-top: 18px; }
+    .skills-group h3 { font-size: 0.92rem; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+
+    .langs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .lang .name { font-weight: 600; }
+    .lang .lvl { color: var(--muted); font-size: 0.9rem; }
+    .bar { height: 6px; background: var(--line); border-radius: 99px; margin-top: 8px; overflow: hidden; }
+    .bar > div { height: 100%; background: var(--accent); border-radius: 99px; }
+
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 32px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 640px) {
+      .wrap { padding: 20px 14px 40px; }
+      header.hero { flex-direction: column; text-align: center; padding: 28px 20px; }
+      .contact, .actions { justify-content: center; }
+      section { padding: 22px 20px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 2px; }
+      .langs { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+    }
+
+    /* ---------- Print ---------- */
+    @media print {
+      :root { --bg: #fff; --card: #fff; --text: #000; --muted: #444; --line: #ddd; --accent: #1d4ed8; --accent-soft: #eef2ff; }
+      .actions, footer { display: none; }
+      .wrap { padding: 0; }
+      section, header.hero { break-inside: avoid; border: none; padding: 12px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- ===== HEADER ===== -->
+    <header class="hero">
+      <img class="avatar" src="profile.jpg" alt="Photo of Mikolaj Suchodolski">
+      <div>
+        <h1>Mikolaj Suchodolski</h1>
+        <div class="role">Junior Software Developer</div>
+        <div class="contact">
+          <a href="mailto:mikolaj.suchodolski@poczta.onet.pl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            mikolaj.suchodolski@poczta.onet.pl
+          </a>
+          <a href="tel:+48693088125">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            +48 693 088 125
+          </a>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Wroclaw, Poland
+          </span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="CV_Mikolaj_Suchodolski.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            Download CV (PDF)
+          </a>
+          <!-- Change YOUR-USERNAME to your GitHub login -->
+          <a class="btn" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about">
+      <h2>About me</h2>
+      <p>
+        Computer Science student aiming for a career in software development. I build backend and web applications
+        in Python and TypeScript/React, know the basics of C, and I'm currently learning Go. At BNY I troubleshoot data
+        discrepancies across complex file systems, which has taught me a structured approach to root-cause analysis.
+        Currently developing a FastAPI-based platform for my engineering thesis.
+      </p>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Brix-V&amp;S — engineering thesis</h3>
+          <p>Platform for valuing and trading LEGO Star Wars sets and minifigures. Building the REST backend in FastAPI with an SQLAlchemy data layer, containerized with Docker.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">Docker</span></div>
+        </div>
+        <div class="project">
+          <h3>DreamPlanner — team project</h3>
+          <p>Frontend Developer in a university team building a planning application hosted in the Azure cloud, integrated with a REST API.</p>
+          <div class="tags"><span class="tag">Azure</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">PostgreSQL</span></div>
+        </div>
+        <div class="project">
+          <h3>nitrobrix.pl — e-commerce</h3>
+          <p>Built and run my own online store with LEGO Star Wars products.</p>
+          <div class="tags"><span class="tag">WordPress</span><span class="tag">WooCommerce</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section>
+      <h2>Work experience</h2>
+      <div class="timeline-item">
+        <div class="date">2025 – Present</div>
+        <div>
+          <h3>Collateral Administrator <span class="org">· BNY</span></h3>
+          <p>Gained practical experience in data troubleshooting and resolving discrepancies across complex shared
+            drives and file systems. Developed a strong eye for detail and a structured approach to root-cause
+            analysis when tracking down data inconsistencies.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2021 – 2025</div>
+        <div>
+          <h3>English Tutor <span class="org">· Tutore</span></h3>
+          <p>Taught English while developing clear, structured communication, active listening and the ability to
+            adapt my approach to different people.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section>
+      <h2>Education</h2>
+      <div class="timeline-item">
+        <div class="date">2023 – Present</div>
+        <div>
+          <h3>Computer Science <span class="org">· WSB Merito University Wroclaw</span></h3>
+          <p>Bachelor of Engineering in progress (expected 2027), specialization: Cloud Solutions Architect.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2021 – 2023</div>
+        <div>
+          <h3>Spatial Development <span class="org">· Wrocław University of Science and Technology</span></h3>
+          <p>Not completed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section>
+      <h2>Technical skills</h2>
+      <div class="skills-group">
+        <h3>Programming</h3>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">C (basics)</span><span class="tag">Go (learning)</span>
+          <span class="tag">TypeScript</span><span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <h3>Frameworks &amp; libraries</h3>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">React (basics)</span></div>
+      </div>
+      <div class="skills-group">
+        <h3>Tools</h3>
+        <div class="tags"><span class="tag">Git / GitHub</span><span class="tag">Docker</span><span class="tag">Unix / macOS terminal</span><span class="tag">VS Code</span></div>
+      </div>
+      <div class="skills-group">
+        <h3>Cloud</h3>
+        <div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Kubernetes (fundamentals)</span><span class="tag">Terraform (fundamentals)</span></div>
+      </div>
+      <div class="skills-group">
+        <h3>Other</h3>
+        <div class="tags"><span class="tag">SAP S/4HANA (data export, finance reporting)</span><span class="tag">MS Office</span><span class="tag">Data analysis</span></div>
+      </div>
+    </section>
+
+    <!-- ===== LANGUAGES ===== -->
+    <section>
+      <h2>Languages &amp; interests</h2>
+      <div class="langs">
+        <div class="lang"><div class="name">Polish</div><div class="lvl">Native</div><div class="bar"><div style="width:100%"></div></div></div>
+        <div class="lang"><div class="name">English</div><div class="lvl">C1</div><div class="bar"><div style="width:85%"></div></div></div>
+        <div class="lang"><div class="name">German</div><div class="lvl">A2</div><div class="bar"><div style="width:35%"></div></div></div>
+      </div>
+      <p style="margin-top:18px"><strong>Interests:</strong> Fallout series, LEGO Star Wars collecting.</p>
+    </section>
+
+    <footer>© <span id="year"></span> Mikolaj Suchodolski · Hosted on GitHub Pages</footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
